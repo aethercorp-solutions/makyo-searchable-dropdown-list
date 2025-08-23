@@ -18,6 +18,7 @@ function App() {
         outlined={false}
         optionLabel="Label"
         filtering={true}
+        usePortal={true}
         />
     </div>
   );

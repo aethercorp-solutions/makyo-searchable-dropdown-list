@@ -25657,7 +25657,8 @@ function IS() {
       multiple: !0,
       outlined: !1,
       optionLabel: "Label",
-      filtering: !0
+      filtering: !0,
+      usePortal: !0
     }
   ) });
 }
