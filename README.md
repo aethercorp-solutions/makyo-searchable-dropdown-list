@@ -1,74 +1,82 @@
-MultiSelectDropdown Component
-
+MultiSelectDropdown
 A flexible and customizable React multi-select dropdown component with search/filtering support, optional portal rendering, and accessible keyboard navigation. Supports both single and multiple selection modes with styled tags for selected items.
 
 Features
-    - Multi-select or single-select modes
-    - Search and filter options dynamically
-    - Optional "outlined" styling variant
-    - Optional portal rendering for dropdown (useful for overflow or positioning)
-    - Keyboard accessible with ARIA roles for accessibility
-    - Highlights search matches in option labels
-    - Customizable option label field (works with objects or strings)
-    - Remove tags inline in multi-select mode
-    - Responsive and styled with clean CSS
+    - Multi-select or single-select mode
+    - Real-time search and filtering of options
+    - Optional outlined styling variant
+    - Optional portal rendering for dropdown
+    - Accessible keyboard navigation (ARIA support)
+    - Search highlight for matched text
+    - Works with objects or strings using optionLabel
+    - Inline removable tags for selected items (in multi-select mode)
+    - Responsive and cleanly styled with CSS
+
+======================================================================================================
 
 Getting Started
 Prerequisites
-
-Make sure you have Node.js and npm or yarn installed.
-    Node.js >= 12
-    npm or yarn
+Ensure you have Node.js and npm or yarn:
+    - Node.js >= 12
+    - npm or yarn
 
 Installation
 Clone the repository and install dependencies:
 
-git clone <your-repo-url>
-cd multi-select-dropdown
+    git clone https://github.com/aethercorp-solutions/makyo-searchable-dropdown-list.git
+    cd multi-select-dropdown
 
+    # Using npm
     npm install
-    # or
+
+    # or using yarn
     yarn install
 
 Running the Component Locally
-To start a development server with live reload:
+To start a development server with live reloading:
 
-    npm start
+    npm run dev
     # or
-    yarn start
+    yarn dev
 
-This will run the app and open http://localhost:3000 where you can test the component in isolation.
+Visit http://localhost:5173 to test the component in isolation.
+
+======================================================================================================
 
 Building for Production
-To build the optimized production bundle:
+To generate a production-ready bundle:
 
     npm run build
     # or
     yarn build
 
-The output will be in the build/ directory.
+The optimized output will be located in the dist/ directory.
 
-==============================================================================
+======================================================================================================
 
 Using Storybook
 Storybook is configured to develop and test the component interactively.
-Running Storybook
-Start the Storybook server:
+Run Storybook
 
     npm run storybook
     # or
     yarn storybook
 
-Open your browser at http://localhost:6006 to explore the MultiSelectDropdown component with various props and configurations.
+Then open http://localhost:6006 in your browser.
 
 Storybook Stories
-    - Default story demonstrates the dropdown with example options.
-    - You can toggle props like filtering, multiple, outlined, usePortal, optionLabel, and   placeholder via the Storybook controls panel.
+    - Default usage with example options.
+    - Dynamic controls for props like:
+        - multiple
+        - filtering
+        - outlined
+        - usePortal
+        - optionLabel
+        - placeholder
 
-==============================================================================
+======================================================================================================
 
-Usage
-Here is a basic example of using the MultiSelectDropdown component in your React app:
+Usage Example
 
 import React from 'react';
 import MultiSelectDropdown from './MultiSelectDropdown';
@@ -96,22 +104,41 @@ function App() {
 
 export default App;
 
-==============================================================================
+======================================================================================================
 
-Props           Type        Default         Description
-options         array       []              Array of options (strings or objects)
-multiple        boolean     true            Enable multiple selection
-outlined        boolean     false           Use outlined style variant
-optionLabel     string      ''              Field name to use for option label (if object)
-filtering       boolean     true            Enable search/filter functionality
-usePortal       boolean     false           Render dropdown menu in a portal at document body
-placeholder     string      'Select...'     Placeholder text when no selection
+Prop	        Type	      Default	        Description
+options	        array	      []	            Array of options (strings or objects)
+multiple	    boolean	      true	            Enable multiple selection
+outlined	    boolean	      false	            Use outlined style variant
+optionLabel	    string	      ''	            Field to display from option objects
+filtering	    boolean	      true	            Enable search functionality
+usePortal	    boolean	      false	            Render dropdown using a portal
+placeholder	    string	      'Select...'	    Placeholder text when no selection
 
+======================================================================================================
 
 Accessibility
-    - Supports keyboard navigation with Enter, Space, and Escape keys
-    - ARIA roles for combobox and listbox
-    - Screen-reader friendly with live region for "No options found"
+    - Full keyboard support:
+        - Enter, Space, Escape, and Arrow keys
+    - Proper ARIA roles: combobox, listbox, option
+    - Screen-reader friendly with live updates
+
+======================================================================================================
+
+Deployment
+To deploy the component or Storybook to GitHub Pages:
+
+    # Deploy component build
+    npm run deploy
+
+    # Deploy Storybook
+    npm run deploy-storybook
+
+    
+
+
+
+
 
 
 
