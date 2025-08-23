@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+MultiSelectDropdown Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A flexible and customizable React multi-select dropdown component with search/filtering support, optional portal rendering, and accessible keyboard navigation. Supports both single and multiple selection modes with styled tags for selected items.
 
-## Available Scripts
+Features
+    - Multi-select or single-select modes
+    - Search and filter options dynamically
+    - Optional "outlined" styling variant
+    - Optional portal rendering for dropdown (useful for overflow or positioning)
+    - Keyboard accessible with ARIA roles for accessibility
+    - Highlights search matches in option labels
+    - Customizable option label field (works with objects or strings)
+    - Remove tags inline in multi-select mode
+    - Responsive and styled with clean CSS
 
-In the project directory, you can run:
+Getting Started
+Prerequisites
 
-### `npm start`
+Make sure you have Node.js and npm or yarn installed.
+    Node.js >= 12
+    npm or yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation
+Clone the repository and install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone <your-repo-url>
+cd multi-select-dropdown
 
-### `npm test`
+    npm install
+    # or
+    yarn install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Running the Component Locally
+To start a development server with live reload:
 
-### `npm run build`
+    npm start
+    # or
+    yarn start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This will run the app and open http://localhost:3000 where you can test the component in isolation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Building for Production
+To build the optimized production bundle:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm run build
+    # or
+    yarn build
 
-### `npm run eject`
+The output will be in the build/ directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+==============================================================================
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Using Storybook
+Storybook is configured to develop and test the component interactively.
+Running Storybook
+Start the Storybook server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    npm run storybook
+    # or
+    yarn storybook
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open your browser at http://localhost:6006 to explore the MultiSelectDropdown component with various props and configurations.
 
-## Learn More
+Storybook Stories
+    - Default story demonstrates the dropdown with example options.
+    - You can toggle props like filtering, multiple, outlined, usePortal, optionLabel, and   placeholder via the Storybook controls panel.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+==============================================================================
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Usage
+Here is a basic example of using the MultiSelectDropdown component in your React app:
 
-### Code Splitting
+import React from 'react';
+import MultiSelectDropdown from './MultiSelectDropdown';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+const options = [
+  { id: 1, name: 'Option 1' },
+  { id: 2, name: 'Option with icon' },
+  { id: 3, name: 'Long Option 3' },
+];
 
-### Analyzing the Bundle Size
+function App() {
+  return (
+    <div>
+      <h1>MultiSelectDropdown Example</h1>
+      <MultiSelectDropdown
+        options={options}
+        optionLabel="name"
+        multiple={true}
+        filtering={true}
+        placeholder="Select options..."
+      />
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default App;
 
-### Making a Progressive Web App
+==============================================================================
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Props           Type        Default         Description
+options         array       []              Array of options (strings or objects)
+multiple        boolean     true            Enable multiple selection
+outlined        boolean     false           Use outlined style variant
+optionLabel     string      ''              Field name to use for option label (if object)
+filtering       boolean     true            Enable search/filter functionality
+usePortal       boolean     false           Render dropdown menu in a portal at document body
+placeholder     string      'Select...'     Placeholder text when no selection
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Accessibility
+    - Supports keyboard navigation with Enter, Space, and Escape keys
+    - ARIA roles for combobox and listbox
+    - Screen-reader friendly with live region for "No options found"
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

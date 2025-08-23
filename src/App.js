@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import MultiSelectDropdown from './components/MultiSelectDropdown';
+
+const options = [
+  'Option 1', 
+  'Option with icon', 
+  'Long Long Option 3', 
+  'Long Long Long Option 4', 
+  'Long Long Long Long Option 5',
+  'Long Long Long Long Long Option 6'
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <MultiSelectDropdown options={options} 
+        multiple={true} 
+        outlined={false}
+        optionLabel="Label"
+        filtering={true}
+        />
     </div>
   );
 }
