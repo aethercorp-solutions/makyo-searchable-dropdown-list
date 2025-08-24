@@ -1,83 +1,13 @@
-MultiSelectDropdown
-A flexible and customizable React multi-select dropdown component with search/filtering support, optional portal rendering, and accessible keyboard navigation. Supports both single and multiple selection modes with styled tags for selected items.
+git clone https://github.com/aethercorp-solutions/makyo-searchable-dropdown-list.git
+cd multi-select-dropdown
 
-Features
-    - Multi-select or single-select mode
-    - Real-time search and filtering of options
-    - Optional outlined styling variant
-    - Optional portal rendering for dropdown
-    - Accessible keyboard navigation (ARIA support)
-    - Search highlight for matched text
-    - Works with objects or strings using optionLabel
-    - Inline removable tags for selected items (in multi-select mode)
-    - Responsive and cleanly styled with CSS
+# Using npm
+npm install
 
-======================================================================================================
+# or using yarn
+yarn install
 
-Getting Started
-Prerequisites
-Ensure you have Node.js and npm or yarn:
-    - Node.js >= 12
-    - npm or yarn
-
-Installation
-Clone the repository and install dependencies:
-
-    git clone https://github.com/aethercorp-solutions/makyo-searchable-dropdown-list.git
-    cd multi-select-dropdown
-
-    # Using npm
-    npm install
-
-    # or using yarn
-    yarn install
-
-Running the Component Locally
-To start a development server with live reloading:
-
-    npm run dev
-    # or
-    yarn dev
-
-Visit http://localhost:5173 to test the component in isolation.
-
-======================================================================================================
-
-Building for Production
-To generate a production-ready bundle:
-
-    npm run build
-    # or
-    yarn build
-
-The optimized output will be located in the dist/ directory.
-
-======================================================================================================
-
-Using Storybook
-Storybook is configured to develop and test the component interactively.
-Run Storybook
-
-    npm run storybook
-    # or
-    yarn storybook
-
-Then open http://localhost:6006 in your browser.
-
-Storybook Stories
-    - Default usage with example options.
-    - Dynamic controls for props like:
-        - multiple
-        - filtering
-        - outlined
-        - usePortal
-        - optionLabel
-        - placeholder
-
-======================================================================================================
-
-Usage Example
-
+# Usage Example
 import React from 'react';
 import MultiSelectDropdown from './MultiSelectDropdown';
 
@@ -104,41 +34,61 @@ function App() {
 
 export default App;
 
-======================================================================================================
+# Import makyo-searchable-dropdown-list
 
-Prop	        Type	      Default	        Description
-options	        array	      []	            Array of options (strings or objects)
-multiple	    boolean	      true	            Enable multiple selection
-outlined	    boolean	      false	            Use outlined style variant
-optionLabel	    string	      ''	            Field to display from option objects
-filtering	    boolean	      true	            Enable search functionality
-usePortal	    boolean	      false	            Render dropdown using a portal
-placeholder	    string	      'Select...'	    Placeholder text when no selection
+# Step 1: Create a Vite + React Project
 
-======================================================================================================
+    npm create vite@latest makyo-dropdownlist-demo -- --template react
+    cd makyo-dropdownlist-demo
+    npm install
 
-Accessibility
-    - Full keyboard support:
-        - Enter, Space, Escape, and Arrow keys
-    - Proper ARIA roles: combobox, listbox, option
-    - Screen-reader friendly with live updates
+# Step 2: Install the Package
 
-======================================================================================================
+    npm install https://github.com/aethercorp-solutions/makyo-searchable-dropdown-list
 
-Deployment
-To deploy the component or Storybook to GitHub Pages:
+# Step 3: Update App.jsx (or App.tsx if using TypeScript)
 
-    # Deploy component build
-    npm run deploy
+    import { useState } from 'react'
+    import './App.css'
+    import { MultiSelectDropdown } from 'makyo-searchable-dropdown-list'
 
-    # Deploy Storybook
-    npm run deploy-storybook
+    const options = [
+        'Option 1',
+        'Option with icon',
+        'Long Long Option 3',
+        'Long Long Long Option 4',
+        'Long Long Long Long Option 5',
+        'Long Long Long Long Long Option 6'
+    ];
 
-    
+    function App() {
+        const [count, setCount] = useState(0);
 
+        return (
+            <div className="App">
+                <h1>Makyo Searchable Dropdown Demo</h1>
+                <MultiSelectDropdown 
+                    options={options}
+                    multiple={true}
+                    outlined={false}
+                    optionLabel="Label"
+                    filtering={true}
+                    usePortal={false}
+                />
+            </div>
+        );
+    }
 
+ export default App;   
 
+# Step 4: Run the App
 
+    npm run dev
 
+Open your browser to http://localhost:5173 (or the URL shown in your terminal).
+
+The deployed url is:
+
+    https://aethercorp-solutions.github.io/makyo-dropdownlist-demo/
 
 
